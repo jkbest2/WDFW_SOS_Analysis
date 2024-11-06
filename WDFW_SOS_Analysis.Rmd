@@ -259,20 +259,20 @@ Here we will run the status and trend analysis using Stan via rstan. We will the
 analyzedata(
   data_date = data_date,
   ESUsubset = c(
-    # "Lower Columbia coho"
-    # ,"Lower Columbia Chinook"
-    # ,"Lower Columbia steelhead"
-    # ,"Mid-Columbia steelhead"
-    # ,"Snake River spring and summer Chinook"
-    # ,"Snake River steelhead"
-    # ,"Upper Columbia spring Chinook"
-    # ,"Upper Columbia steelhead"
-    # ,"Snake River fall Chinook"
-    # ,"Puget Sound steelhead"
-    # ,"Puget Sound Chinook"
-    # ,"Ozette Lake sockeye"
-    # ,"Hood Canal summer chum"
-    # ,"Lower Columbia chum"
+    "Lower Columbia coho",
+    "Lower Columbia Chinook",
+    "Lower Columbia steelhead",
+    "Mid-Columbia steelhead",
+    "Snake River spring and summer Chinook",
+    "Snake River steelhead",
+    "Upper Columbia spring Chinook",
+    "Upper Columbia steelhead",
+    "Snake River fall Chinook",
+    "Puget Sound steelhead",
+    "Puget Sound Chinook",
+    "Ozette Lake sockeye",
+    "Hood Canal summer chum",
+    "Lower Columbia chum"
   ),
   ESU_DPS_list = ESU_DPS_list,
   cores = 4,
