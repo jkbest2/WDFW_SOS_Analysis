@@ -333,3 +333,8 @@ In order to reproduce this pdf or html page you need to have a LaTex application
 # tinytex::install_tinytex()
 ```
 
+This document was compiled at `r Sys.time()` using the following packages:
+
+```{r}
+sessionInfo()
+```
