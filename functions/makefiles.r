@@ -32,16 +32,15 @@ makefiles<-function(data,data_date,databeforelisting="No"){
       tdat<-tdat[!is.na(tdat$NUMBER_OF_SPAWNERS),]
       write.csv(tdat,paste(SubDir,"/",unique(data$ESU_DPS_COMMONNAME)[i],"_",data_date,".csv",sep=""),row.names = F)
     }
-    CAdata<-data.frame(read.csv(paste(SubDir,"/All_CA_Data_",data_date,".csv",sep="")))
-    names<-colnames(data)
-    All_Data<-merge(data,CAdata[,!colnames(CAdata)%in%names|colnames(CAdata)%in%c("ESU_DPS","COMMONPOPNAME2","SPAWNINGYEAR")],by=c("ESU_DPS","COMMONPOPNAME2","SPAWNINGYEAR"),all=T)
-    write.csv(All_Data,paste(SubDir,"/All_Data_",data_date,".csv",sep=""),row.names = F)
+    spi_data <- data.frame(read.csv(paste(SubDir, "/All_SPi_Data_", data_date, ".csv", sep = "")))
+    names <- colnames(data)
+    All_Data <- merge(data, spi_data[, !colnames(spi_data) %in% names | colnames(spi_data) %in% c("ESU_DPS", "COMMONPOPNAME2", "SPAWNINGYEAR")], by = c("ESU_DPS", "COMMONPOPNAME2", "SPAWNINGYEAR"), all = T)
+    write.csv(All_Data, paste(SubDir, "/All_Data_", data_date, ".csv", sep = ""), row.names = F)
   }
-  if(databeforelisting=="Yes"){
-    CAdata<-data.frame(read.csv(paste(SubDir,"/All_CA_Data_incl_before_listing_",data_date,".csv",sep="")))
-    names<-colnames(data)
-    All_Data<-merge(data,CAdata[,!colnames(CAdata)%in%names|colnames(CAdata)%in%c("ESU_DPS","COMMONPOPNAME2","SPAWNINGYEAR")],by=c("ESU_DPS","COMMONPOPNAME2","SPAWNINGYEAR"),all=T)
-    write.csv(All_Data,paste(SubDir,"/All_Data_incl_before_listing_",data_date,".csv",sep=""),row.names = F)
-    
+  if (databeforelisting == "Yes") {
+    spi_data <- data.frame(read.csv(paste(SubDir, "/All_SPi_Data_incl_before_listing_", data_date, ".csv", sep = "")))
+    names <- colnames(data)
+    All_Data <- merge(data, spi_data[, !colnames(spi_data) %in% names | colnames(spi_data) %in% c("ESU_DPS", "COMMONPOPNAME2", "SPAWNINGYEAR")], by = c("ESU_DPS", "COMMONPOPNAME2", "SPAWNINGYEAR"), all = T)
+    write.csv(All_Data, paste(SubDir, "/All_Data_incl_before_listing_", data_date, ".csv", sep = ""), row.names = F)
   }
 }
