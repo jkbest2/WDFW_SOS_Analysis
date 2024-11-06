@@ -79,23 +79,24 @@ using("tidyverse",
 # User Inputs
 We need to specify data source file names, list some manual  data filter conditions, and specify which ESUs and DPSs we would like to analyze to estimate trends and smoothed abundances for:
 ```{r user_inputs,message=FALSE, warning=FALSE}
-#=========================
-#designate data file names
-#=========================
-#ESU_DPS_list file name (also lists which ESUs to use CA for)
-ESU_DPS_list<-"ESU_DPS_List.csv" 
-#ESU_DPS_list file name 
-ESU_DIP_list_all<-"ESU_DIP_list_all.csv" 
-#Recovery_Goals file name
-Recovery_Goals<-"Recovery_Goals.csv"
+# =========================
+# designate data file names
+# =========================
+# ESU_DPS_list file name (also lists which ESUs to use CA for)
+ESU_DPS_list <- "ESU_DPS_List.csv"
+# ESU_DPS_list file name
+ESU_DIP_list_all <- "ESU_DIP_list_all.csv"
+# Recovery_Goals file name
+Recovery_Goals <- "Recovery_Goals.csv"
+Recovery_Goals_LUT_edited <- "recoverygoals_LUT_edited.csv"
 
-#========================================
-#set date stamp for file names and  plots
-#========================================
-#set data date--this will name files and 
-#folders and tell the analysis code which 
-#date's data to use
-data_date = "2024-10-25"#Sys.Date()
+# ========================================
+# set date stamp for file names and  plots
+# ========================================
+# set data date--this will name files and
+# folders and tell the analysis code which
+# date's data to use
+data_date <- "2024-11-05" # Sys.Date()
 
 
 #========================================
